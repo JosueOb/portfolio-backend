@@ -1,0 +1,8 @@
+name: portfolio
+
+services:
+  backend:
+    container_name: backend
+    build:
+        context: ../../
+        target: base
