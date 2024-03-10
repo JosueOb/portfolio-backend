@@ -1,0 +1,12 @@
+services:
+  linter:
+    container_name: linter
+    build:
+      context: ../../
+      target: development
+    environment:
+        - LINTER_WORKDIR_PATH=/linter
+    volumes:
+      - ../linter:/linter
+      - ../../main.py:/home/portfolio-backend/main.py
+    entrypoint: ["/linter/run.sh"]
