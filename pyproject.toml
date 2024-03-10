@@ -1,0 +1,13 @@
+[tool.poetry]
+package-mode = false
+name = "portfolio-backend"
+description = "Portfolio backend side"
+authors = ["JosueOb <josuericardocando@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
