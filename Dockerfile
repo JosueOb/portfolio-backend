@@ -18,6 +18,7 @@ WORKDIR $PORTFOLIO_WORKDIR_PATH
 COPY pyproject.toml ./
 COPY poetry.lock ./
 COPY main.py ./
+COPY src/ ./src
 
 # Installing dependencies
 RUN poetry config virtualenvs.create false

@@ -9,4 +9,5 @@ services:
     volumes:
       - ../linter:/linter
       - ../../main.py:/home/portfolio-backend/main.py
+      - ../../src:/home/portfolio-backend/src
     entrypoint: ["/linter/run.sh"]

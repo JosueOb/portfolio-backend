@@ -4,3 +4,4 @@ services:
     build:
         context: ../../
         target: base
+# TODO: Create a volume for src and main file
