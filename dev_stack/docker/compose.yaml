@@ -1,6 +1,20 @@
 services:
-  backend:
-    container_name: backend
+  api:
+    container_name: api
     build:
         context: ../../
-        target: base
+        target: development
+    volumes:
+      - ../../pyproject.toml:/home/portfolio-backend/pyproject.toml
+      - ../../poetry.lock:/home/portfolio-backend/poetry.lock
+      - ../../main.py:/home/portfolio-backend/main.py
+      - ../../src:/home/portfolio-backend/src
+    ports:
+      - "8000:8000"
+    networks:
+        - default
+
+networks:
+  default:
+    name: portfolio-backend-network
+    driver: bridge

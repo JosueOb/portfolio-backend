@@ -17,6 +17,7 @@ WORKDIR $PORTFOLIO_WORKDIR_PATH
 # Copying required files
 COPY pyproject.toml ./
 COPY poetry.lock ./
+COPY src/ ./src
 COPY main.py ./
 
 # Installing dependencies
@@ -28,8 +29,11 @@ RUN poetry install --only main
 ############################################
 FROM base AS development
 
+# Copying required files
+COPY dev_stack/server/run.sh ./scripts/server/run.sh
+
 # Installing linter dependencies
 RUN poetry install --with linter
 
-# Running the main.py
-CMD [ "python", "./main.py" ]
+# Running the live server
+CMD [ "./scripts/server/run.sh" ]
